@@ -24,9 +24,6 @@ function App() {
       <div className="app">
         <Navbar firebaseUser={firebaseUser} />
         <Switch>
-          <Route path="/" exact>
-            Inicio...
-          </Route>
           <Route path="/login">
             <Login />
           </Route>
