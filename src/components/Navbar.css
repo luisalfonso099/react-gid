@@ -1,0 +1,41 @@
+.nav {
+    background-color: rgb(237, 164, 247);
+    box-shadow: 0px 0px 5px rgb(241, 30, 196);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0px;
+    font-size: larger;
+
+}
+.links{
+    margin-right: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.link{
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 4px;
+    color: black;
+    margin: 0 5px;
+}
+.link:hover{
+    transition: all 0.5s;
+    background-color: rgb(219, 126, 228);
+    color: black;
+}
+.cerrar-sesion{
+    background-color: transparent;
+    border: none;
+    padding: 5px;
+    border-radius: 4px;
+}
+.cerrar-sesion:hover{
+    transition: all 0.5s;
+    background-color: rgb(219, 126, 228);
+    color: black;
+}
+.usuario{
+  margin-left: 100px;
+}

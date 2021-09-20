@@ -1,0 +1,57 @@
+.btn-guardar{
+    border: none;
+    background: transparent;
+    width: 50%;
+    border-radius:4px;
+
+}
+.btn-eliminar{
+    border: none;
+    background: transparent;
+    width: 50%;
+    border-radius:4px;
+}
+.btn-guardar:hover{
+    background-color: rgb(50, 182, 33);
+    transition: all 0.5s ease-in-out;
+}
+.nueva {
+    width: 70%;
+    margin-top: 100px;
+}
+.targeta{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(186, 197, 195);
+    width: 100%;
+    margin: 20px;
+    box-shadow: 0px 0px 10px rgb(79, 80, 85);
+    border-radius:10px;
+    box-sizing: border-box;
+    background-color: #f3f0f8;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='199' viewBox='0 0 100 199'%3E%3Cg fill='%23aca5b8' fill-opacity='0.4'%3E%3Cpath d='M0 199V0h1v1.99L100 199h-1.12L1 4.22V199H0zM100 2h-.12l-1-2H100v2z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+}
+.inputs{
+    border: none;
+    background-color: transparent;
+    padding: 10px;
+    border-radius:10px;
+    font-size: 1.5em;
+}
+.inputs:focus{
+    outline: none;
+    background-color: rgba(235, 223, 223, 0.9);
+    transition: 0.4s;
+}
+.header_nota{
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: space-between;
+    color: rgba(2, 1, 1, 0.3);
+
+}
+.parrafo:focus{
+    outline: none;
+    transition: 0.4s;
+}
