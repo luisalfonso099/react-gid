@@ -10,16 +10,12 @@ const Navbar = ({ firebaseUser, history }) => {
       history.push("/login");
     });
   };
-  // console.log(firebaseUser.email);
   return (
     <div className="nav">
       <h2 className="usuario">
         {firebaseUser !== null ? firebaseUser.email : "Todo List"}
       </h2>
       <div className="links">
-        <NavLink className="link" to="/" exact>
-          Inicio
-        </NavLink>
         {firebaseUser !== null ? (
           <NavLink className="link" to="/admin">
             Admin
