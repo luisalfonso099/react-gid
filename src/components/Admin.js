@@ -13,7 +13,7 @@ const Admin = ({ history }) => {
     } else {
       history.push("/login");
     }
-  }, [history, user]);
+  }, [history]);
   return (
     <div>
       <TodoList user={user} />
