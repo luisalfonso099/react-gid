@@ -75,13 +75,16 @@ const TodoList = ({ user }) => {
           id: doc.id,
           ...doc.data(),
         }));
+        console.log(arrayData);
+
         setLista(arrayData);
       } catch (error) {
-        console.log(error);
+        console.log("error");
       }
     };
     datos();
-  }, [nota, user]);
+  }, [user]);
+
   const nuevaNota = () => {
     setModoEdicion(true);
     setCrearNueva(true);
