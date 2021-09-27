@@ -83,7 +83,7 @@ const TodoList = ({ user }) => {
       }
     };
     datos();
-  }, [user]);
+  }, [user, crearNueva]);
 
   const nuevaNota = () => {
     setModoEdicion(true);

@@ -16,11 +16,11 @@ const Navbar = ({ firebaseUser, history }) => {
         {firebaseUser !== null ? firebaseUser.email : "Todo List"}
       </h2>
       <div className="links">
-        {firebaseUser !== null ? (
+        {firebaseUser !== null && (
           <NavLink className="link" to="/admin">
             Admin
           </NavLink>
-        ) : null}
+        )}
 
         {firebaseUser !== null ? (
           <button onClick={() => cerrarSesion()} className="cerrar-sesion">
