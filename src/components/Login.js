@@ -29,11 +29,10 @@ const Login = ({ history }) => {
   };
   const login = useCallback(async () => {
     try {
-      const res = await auth.signInWithEmailAndPassword(email, pass);
-      console.log(res.user);
-      setError(null);
+      await auth.signInWithEmailAndPassword(email, pass);
       setPass("");
       setEmail("");
+      setError(null);
       history.push("/admin");
     } catch (error) {
       if (error.code === "auth/user-not-found") setError("Email no existe...");
@@ -55,7 +54,7 @@ const Login = ({ history }) => {
       setEmail("");
       history.push("/admin");
     } catch (error) {
-      console.log(error);
+      console.log("errror login");
       if (error.code === "auth/invalid-email") setError("Email no valido");
       if (error.code === "auth/email-already-in-use") {
         setError("Email ya usado");

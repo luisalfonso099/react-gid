@@ -13,7 +13,7 @@ const Navbar = ({ firebaseUser, history }) => {
   return (
     <div className="nav">
       <h2 className="usuario">
-        {firebaseUser !== null ? firebaseUser.email : "Todo List"}
+        {firebaseUser !== null ? firebaseUser.email : "Todo Luis"}
       </h2>
       <div className="links">
         {firebaseUser !== null && (

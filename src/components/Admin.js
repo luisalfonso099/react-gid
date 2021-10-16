@@ -8,15 +8,13 @@ import "./Admin.css";
 const Admin = ({ history }) => {
   const [user, setUser] = useState(null);
   useEffect(() => {
-    setTimeout(() => {
-      if (auth.currentUser) {
-        setUser(auth.currentUser);
-      } else {
-        history.push("/login");
-      }
-    }, 500);
+    if (auth.currentUser) {
+      setUser(auth.currentUser);
+    } else {
+      history.push("/login");
+    }
   }, [history]);
-  console.log(auth.currentUser);
+
   return (
     <div>
       <TodoList user={user} />

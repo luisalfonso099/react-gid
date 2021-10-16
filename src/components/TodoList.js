@@ -30,24 +30,31 @@ const TodoList = ({ user }) => {
   };
   const editarTareaDb = async (e) => {
     e.preventDefault();
-    try {
-      await db.collection(user.uid).doc(id).update({
-        nota: nota,
-        titulo: titulo,
-      });
-      const listaEditada = lista.map((item) =>
-        item.id === id
-          ? { id: item.id, dia: item.dia, nota: item.nota, titulo: item.titulo }
-          : item
-      );
-      setLista(listaEditada);
-      setNota("");
-      setTitulo("");
-      setId("");
-      setModoEdicion(false);
-      setCrearNueva(true);
-    } catch (error) {
-      console.log(error);
+    if (user !== null) {
+      try {
+        await db.collection(user.uid).doc(id).update({
+          nota: nota,
+          titulo: titulo,
+        });
+        const listaEditada = lista.map((item) =>
+          item.id === id
+            ? {
+                id: item.id,
+                dia: item.dia,
+                nota: item.nota,
+                titulo: item.titulo,
+              }
+            : item
+        );
+        setLista(listaEditada);
+        setNota("");
+        setTitulo("");
+        setId("");
+        setModoEdicion(false);
+        setCrearNueva(true);
+      } catch (error) {
+        console.log("otro err");
+      }
     }
   };
 
@@ -69,17 +76,17 @@ const TodoList = ({ user }) => {
   };
   useEffect(() => {
     const datos = async () => {
-      try {
-        const data = await db.collection(user.uid).get();
-        const arrayData = data.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        console.log(arrayData);
-
-        setLista(arrayData);
-      } catch (error) {
-        console.log("error");
+      if (user !== null) {
+        try {
+          const data = await db.collection(user.uid).get();
+          const arrayData = data.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+          }));
+          setLista(arrayData);
+        } catch (error) {
+          console.log("error saf");
+        }
       }
     };
     datos();
